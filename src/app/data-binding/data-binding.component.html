@@ -1,0 +1,26 @@
+<p>
+  {{stringInterpolation}}
+</p>
+<input type="text" [value]="stringInterpolation"><br/>
+<input type="number" [(ngModel)]= "person.ampere" (keyup)="keyDown($event)">
+<input type="number" [(ngModel)] = "person.totalAmount" >
+<button (click) = "onClick()">Save Data</button>
+<p [ngClass]="{redBorder : check()}">
+  This is a paragraph
+</p>
+<p [ngStyle]="{color:'green'}" #paraValue>
+  This is a paragraph
+</p>
+<h3>This is a custome property binding</h3>
+<app-property-binding (clicked)="onClicked($event)" 
+[result]="result" [anyNumber] = "anyNumber">
+</app-property-binding>
+<h3>This is a Event Binding</h3>
+<app-event-binding ></app-event-binding>
+<h3 id="heading">This is a Life Cycle Hook</h3>
+<app-life-cycle [bindable]="boundValue">
+  <button (click)="test = 'it is new string'" >Change Test String!!</button>
+  <button (click)="boundValue = '3000'" >Change bindable!</button>
+ <p #newValue>{{test}} </p> 
+ <p>{{newValue.textContent}}</p>
+</app-life-cycle>
